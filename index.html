@@ -4,27 +4,30 @@
     <title>Rock, Paper, Scissors!</title>
  <body>
     <script>
-    
-    let playChoices = ["Rock", "Paper", "Scissors"]
 
-    let computerChoice = function() {
-        return rand = playChoices[Math.floor(Math.random() * playChoices.length)];
+    let playChoicesArray = ["rock", "paper", "scissors"]
+
+    function computerChoice() {
+         return playChoicesArray[getRandomInt()]
+    }
+
+    function getRandomInt(){
+        return [Math.floor(Math.random() *Math.floor(3))];
     }
 
     function playGame (humanChoice, computerChoice) {
 
-    let humanChoiceLowerCase = (humanChoice.toLowerCase());
-    let computerChoiceLowerCase = (computerChoice.toLowerCase());
+        let humanChoiceLowerCase = (humanChoice.toLowerCase());
 
-    if (humanChoiceLowerCase == computerChoiceLowerCase) {
-        return "Draw!";
-    } else if (humanChoiceLowerCase=="rock") {
-        return (computerChoiceLowerCase=="scissors") ? "You Win":"You Lose";
-    } else if (humanChoiceLowerCase=="paper") {
-        return (computerChoiceLowerCase=="scissors") ? "You Lose":"You Win";
-    } else if (humanChoiceLowerCase=="scissors") {
-        return (computerChoiceLowerCase=="ock") ? "You Lose": "You Win";
-    } else "Uh-oh";
+        if (humanChoiceLowerCase == computerChoice) {
+            return "Draw!";
+        } else if (humanChoiceLowerCase=="rock") {
+            return (computerChoice=="scissors") ? "You Win":"You Lose";
+         } else if (humanChoiceLowerCase=="paper") {
+            return (computerChoice=="scissors") ? "You Lose":"You Win";
+        } else if (humanChoiceLowerCase=="scissors") {
+            return (computerChoice=="rock") ? "You Lose": "You Win";
+        } else "Uh-oh";
     } 
 
     </script>

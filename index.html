@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rock, Paper, Scissors!</title>
+ <body>
+    <script>
+    
+    let playChoices = ["Rock", "Paper", "Scissors"]
+
+    let computerChoice = function() {
+        return rand = playChoices[Math.floor(Math.random() * playChoices.length)];
+    }
+
+    function playGame (humanChoice, computerChoice) {
+
+    let humanChoiceLowerCase = (humanChoice.toLowerCase());
+    let computerChoiceLowerCase = (computerChoice.toLowerCase());
+
+    if (humanChoiceLowerCase == computerChoiceLowerCase) {
+        return "Draw!";
+    } else if (humanChoiceLowerCase=="rock") {
+        return (computerChoiceLowerCase=="scissors") ? "You Win":"You Lose";
+    } else if (humanChoiceLowerCase=="paper") {
+        return (computerChoiceLowerCase=="scissors") ? "You Lose":"You Win";
+    } else if (humanChoiceLowerCase=="scissors") {
+        return (computerChoiceLowerCase=="ock") ? "You Lose": "You Win";
+    } else "Uh-oh";
+    } 
+
+    </script>
+</body>
+</head>
+</html>

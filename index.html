@@ -14,51 +14,27 @@
     }
 
     function computerChoice() {
-        return choiceArray[getRandomInt()]
+        return choiceArray[getRandomInt()];
     }
 
-   /* How do I pass the value of computerChoice() above to the parameter computerChoice in the function below? */
+    function playRound() {
 
-    function playRound(humanChoice, computerChoice) {
+        computerChoice=computerChoice();
 
         humanChoice = prompt("let's play","Rock Paper or Scissors?");
 
         let humanChoiceLowerCase = humanChoice.toLowerCase();
-        
+
         if (humanChoiceLowerCase == computerChoice) {
-            return alert("1Draw!");
+            return "Draw!";
         } else if (humanChoiceLowerCase=="rock") {
-                if (computerChoice=="scissors") {
-                    return ("2You Win!");
-                } else if (computerChoice=="paper") {
-                    return ("2You Lose");
-                } else if (computerChoice==null) {
-                    return ("2null computerChoice")
-                } else if  (computerChoice==undefined) {
-                    return "2undefined computerChoice"
-                }
+            return (computerChoice=="scissors") ? "You Win":"You Lose";
         } else if (humanChoiceLowerCase=="paper") {
-                if (computerChoice=="rock") {
-                    return ("3You Win");
-                } else if (computerChoice=="scissors") {
-                    return ("3You Lose");
-                } else if (computerChoice==null) {
-                    return ("3null computerChoice")
-                } else if  (computerChoice==undefined) {
-                    return "3undefined computerChoice"
-                }
-            } else if (humanChoiceLowerCase=="scissors") {
-                if (computerChoice=="paper") {
-                    return ("4You Win!");
-                } else if (computerChoice=="rock") {
-                    return ("4You Lose");
-                } else if (computerChoice==null) {
-                    return ("4null computerChoice")
-                } else if  (computerChoice==undefined) {
-                    return "4undefined computerChoice"
-                }
-        } else return ("5Uh-oh");
-    }
+            return (computerChoice=="scissors") ? "You Lose":"You Win";
+        } else if (humanChoiceLowerCase=="scissors") {
+            return (computerChoice=="ock") ? "You Lose": "You Win";
+        } else "Uh-oh";
+    } 
 
     /* Play First to Five*/
 

@@ -1,64 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset='utf-8'>
     <title>Rock, Paper, Scissors!</title>
- <body>
-    <script>
-
-    let choiceArray = ["rock", "paper", "scissors"]
-
-    function getRandomInt(){
-        return Math.floor(Math.random() * 3);
-    }
-
-    function computerChoice() {
-        return choiceArray[getRandomInt()];
-        }
-
-    let computerScore = 0
-    let userScore = 0
-
-    function playGame() { 
-        
-        while (userScore<5 && computerScore<5) {
-        
-        playRound();
-
-        if (userScore==5) {
-            return "You won the game!!!";
-        } else if (computerScore==5) {
-            return "You lost the game. womp";
-        } else "play again"
-    }
-    }
-    
-    function playRound(){
-
-        let getComputerChoice = computerChoice();
-        
-        let userChoice= prompt("Let's play!","Rock Paper or Scissors?")
-
-        let userChoiceLowerCase = userChoice.toLowerCase();
-
-        if (userChoiceLowerCase == getComputerChoice) {
-            console.log("Draw!");
-        } else if (userChoiceLowerCase=="rock") {
-            (getComputerChoice=="scissors") ? 
-            console.log ("Youn win! User Score: " + (userScore+=1)+": Computer Score: "+ (computerScore)): 
-            console.log("You lose :( User Score: "+userScore +": Computer Score: " +(computerScore+=1));
-        } else if (userChoiceLowerCase=="paper") {
-            (getComputerChoice=="rock") ? 
-            console.log ("Youn win! User Score: " + (userScore+=1)+": Computer Score: "+ (computerScore)): 
-            console.log("You lose :( User Score: "+userScore +": Computer Score: " +(computerScore+=1));
-        } else if (userChoiceLowerCase=="scissors") {
-            (getComputerChoice=="paper") ? 
-            console.log ("Youn win! User Score: " + (userScore+=1)+": Computer Score: "+ (computerScore)): 
-            console.log("You lose :( User Score: "+userScore +": Computer Score: " +(computerScore+=1));
-        } else "Something went terribly wrong";
-    } 
-
-
-    </script>
-</body>
+    <link rel="stylesheet" href="style.css">
 </head>
+<body>
+
+    <header>
+        <h1>Rock Paper Scissors</h1>
+    </header>
+
+    <div class="name" id="computerName">
+        <h2>Computer</h2>
+    </div>
+
+    <div class="choices" id="computerChoices">
+        <img src="media/rock.png" class="computerChoice" id="cr">
+        <img src="media/paper.png" class="computerChoice" id="cp">
+        <img src="media/scissors.png" class="computerChoice" id="cs">
+    </div>
+
+    <div class="scoreboard">
+        <span id="userScore">0</span>:<span id="computerScore">0</span>
+    </div>
+    
+    <div class="name" id="userName">
+        <h2>User</h2>
+    </div>
+
+    <div class="choices" id="userChoices">
+        <img src="media/rock.png" class="userChoice" id="ur">
+        <img src="media/paper.png" class="userChoice" id="up">
+        <img src="media/scissors.png" class="userChoice" id="us">
+    </div>
+
+    <script src='script.js'> </script>
+</body>
 </html>
